@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply antialiased select-none;
+    font-family: 'Amiri', serif;
+    background-color: #17120e;
+    color: #2b2620;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Arabic Typography Helpers */
+.font-amiri {
+  font-family: 'Amiri', serif;
+}
+
+.font-aref {
+  font-family: 'Aref Ruqaa', cursive;
+}
+
+.font-cairo {
+  font-family: 'Cairo', sans-serif;
+}
+
+.font-quran {
+  font-family: 'Amiri Quran', 'Amiri', serif;
+}
+
+.font-kufi {
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+/* Paper Textures and Print Halftone */
+.newspaper-paper {
+  background-color: #f5eedc;
+  background-image: 
+    radial-gradient(#d6c9ad 1px, transparent 1px),
+    radial-gradient(#e0d4bb 1px, #f5eedc 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  box-shadow: 
+    0 1px 3px rgba(0,0,0,0.12),
+    0 8px 24px rgba(0,0,0,0.25),
+    inset 0 0 80px rgba(180, 140, 90, 0.2),
+    inset 0 0 20px rgba(160, 120, 70, 0.15);
+}
+
+.vintage-border-double {
+  border-style: double;
+  border-width: 4px;
+  border-color: #2c251e;
+}
+
+.vintage-border-triple {
+  border-top: 3px solid #2c251e;
+  border-bottom: 1px solid #2c251e;
+}
+
+/* Aged Paper Edge Vignette */
+.paper-vignette {
+  box-shadow: 
+    inset 0 0 45px rgba(138, 97, 49, 0.28),
+    inset 0 0 15px rgba(94, 62, 28, 0.22);
+}
+
+/* Newspaper Column Rule */
+.column-rule {
+  border-left: 1px solid rgba(44, 37, 30, 0.25);
+}
+
+/* Drop Cap */
+.newspaper-dropcap::first-letter {
+  font-family: 'Aref Ruqaa', 'Amiri', serif;
+  font-size: 3.25rem;
+  line-height: 0.85;
+  float: right;
+  margin-left: 0.65rem;
+  margin-top: 0.2rem;
+  color: #1a1612;
+  font-weight: bold;
+}
+
+/* Lighting Atmospheres */
+.lighting-morning {
+  background: linear-gradient(135deg, rgba(255, 235, 185, 0.28) 0%, rgba(255, 215, 130, 0.14) 40%, rgba(0, 0, 0, 0) 80%);
+}
+
+.lighting-lamp {
+  background: radial-gradient(circle at 65% 35%, rgba(255, 225, 140, 0.42) 0%, rgba(255, 180, 70, 0.2) 35%, rgba(10, 8, 5, 0.65) 90%);
+}
+
+.lighting-night {
+  background: radial-gradient(circle at 50% 25%, rgba(140, 180, 240, 0.18) 0%, rgba(10, 15, 30, 0.55) 55%, rgba(5, 8, 18, 0.82) 100%);
+}
+
+.lighting-horror {
+  background: radial-gradient(circle at 50% 50%, rgba(180, 90, 40, 0.2) 0%, rgba(15, 10, 15, 0.75) 60%, rgba(5, 4, 8, 0.92) 100%);
+}
+
+.lighting-cafe {
+  background: radial-gradient(circle at 45% 40%, rgba(255, 200, 120, 0.28) 0%, rgba(180, 110, 50, 0.15) 50%, rgba(25, 15, 10, 0.55) 100%);
+}
+
+/* Realistic Steam Animation for Cairo baladi tea cup */
+@keyframes steamDrift {
+  0% { transform: translateY(0) scaleX(1); opacity: 0; }
+  30% { opacity: 0.45; }
+  70% { opacity: 0.2; transform: translateY(-20px) scaleX(1.4); }
+  100% { transform: translateY(-35px) scaleX(1.8); opacity: 0; }
+}
+
+.animate-steam-1 {
+  animation: steamDrift 3.5s infinite ease-out;
+}
+
+.animate-steam-2 {
+  animation: steamDrift 4.2s infinite ease-out 1.2s;
+}
+
+/* Shaving particles fly out */
+@keyframes shavingFly {
+  0% { transform: translate(0, 0) rotate(0deg) scale(0.5); opacity: 1; }
+  50% { transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(180deg) scale(1); opacity: 0.9; }
+  100% { transform: translate(calc(var(--tw-translate-x) * 1.5), calc(var(--tw-translate-y) + 40px)) rotate(360deg) scale(0.8); opacity: 0; }
+}
+
+/* Crease wrinkle on paper */
+.paper-crease-mark {
+  background: radial-gradient(circle, rgba(90, 60, 30, 0.25) 0%, rgba(140, 100, 50, 0.12) 40%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Rubber crumbs */
+.eraser-crumb {
+  background-color: #4a453f;
+  border-radius: 9999px;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Vintage Paper Edge curl */
+.page-curl-corner {
+  background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.15) 50%, rgba(240,230,205,0.95) 55%);
+}
+
+/* Noise overlay */
+.bg-wood-desk {
+  background-color: #261912;
+  background-image: 
+    radial-gradient(ellipse at 50% 50%, #3a271c 0%, #1e130d 100%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 2px, transparent 2px, transparent 8px);
+}
